@@ -15,11 +15,9 @@ const forecast = (latitude, longhitude, callback) => {
     } else {
       callback(
         undefined,
-        "The temperature today is " +
-          body.current.temperature +
-          "°C. It feels like " +
-          body.current.feelslike +
-          "°C"
+        `${body.current.weather_descriptions}.
+        The temperature today is ${body.current.temperature} °C. It feels like " ${body.current.feelslike}°C.
+        A windspeed of ${body.current.wind_speed} Kmph in a direction of ${body.current.wind_dir}.`
       );
     }
   });
